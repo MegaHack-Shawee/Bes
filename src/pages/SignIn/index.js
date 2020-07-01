@@ -5,7 +5,7 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
-// import { Container } from './styles';
+import {Touch} from './styles';
 
 import * as validation from '../../utils/validations';
 import {handleInputChange} from '../../utils/handlers';
@@ -36,7 +36,7 @@ const SignIn = ({navigation}) => {
     }, [email, emailError, password, passwordError]);
 
     function handleSignIn() {
-        navigation.navigate('SignUpScreen');
+        navigation.navigate('HomeScreen');
     }
 
     return (
@@ -92,6 +92,9 @@ const SignIn = ({navigation}) => {
                     disabled={isButtonDisabled}
                     callback={handleSignIn}
                 />
+                <Touch onPress={() => navigation.navigate('SignUpScreen')}>
+                    <Text>Cadastre-se</Text>
+                </Touch>
             </Form>
         </Container>
     );

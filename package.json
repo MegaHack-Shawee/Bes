@@ -14,12 +14,15 @@
         "@react-navigation/core": "^5.11.1",
         "@react-navigation/native": "^5.6.1",
         "@react-navigation/stack": "^5.6.2",
+        "immer": "^7.0.5",
         "react": "16.11.0",
         "react-native": "0.62.2",
         "react-native-gesture-handler": "^1.6.1",
         "react-native-reanimated": "^1.9.0",
         "react-native-safe-area-context": "^3.0.7",
         "react-native-screens": "^2.9.0",
+        "react-redux": "^7.2.0",
+        "redux": "^4.0.5",
         "styled-components": "^5.1.1"
     },
     "devDependencies": {

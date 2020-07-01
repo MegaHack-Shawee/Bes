@@ -1,10 +1,14 @@
 import React from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
 // import { Container } from './styles';
 
 const SignUp = () => {
-  return <View />;
+    return (
+        <View>
+            <Text>Sgn up now</Text>
+        </View>
+    );
 };
 
 export default SignUp;

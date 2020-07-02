@@ -5,8 +5,6 @@ export const Row = styled.View`
     margin-top: 20px;
     justify-content: space-between;
     align-items: center;
-    border-bottom-color: #ddd;
-    border-bottom-width: 1px;
     padding-bottom: 25px;
 `;
 
@@ -35,26 +33,31 @@ export const Body = styled.View`
     padding: 0 40px;
 `;
 
-export const ReservationData = styled.View`
+export const InputView = styled.View`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 20px;
     border-bottom-color: #ddd;
     border-bottom-width: 1px;
-    padding: 20px 0;
+`;
+
+export const Input = styled.TextInput`
+    border: 1px solid #808080;
+    padding: 5px 10px;
+    width: 80%;
 `;
 
 export const Button = styled.TouchableOpacity`
-    background: #e25822;
-    padding: 12px 60px;
-    align-self: center;
-    margin-top: 20px;
+    padding: 10px 15px;
+    align-items: center;
+    justify-content: center;
+    background: #ff5300;
 `;
 
-export const NumberOfTables = styled.View`
-    flex-direction: row;
-`;
-export const PlusLessButton = styled.TouchableOpacity`
-    padding: 0 10px;
+export const TableInfo = styled.View`
+    width: 100%;
+    padding: 10px;
     align-items: center;
+    background: #ff5300;
 `;

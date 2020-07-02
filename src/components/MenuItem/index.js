@@ -8,10 +8,10 @@ const MenuItem = ({item}) => {
     return (
         <Row onPress={() => console.warn(item.name)}>
             <ItemInfo>
-                <Text weight="bold" numberOfLines={1}>
+                <Text color="#808080" weight="bold" numberOfLines={1}>
                     {item.name}
                 </Text>
-                <Text color="#1c1c1c" size="10px" numberOfLines={2}>
+                <Text color="#808080" size="10px" numberOfLines={2}>
                     {item.description}
                 </Text>
                 <Text

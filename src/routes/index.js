@@ -7,6 +7,7 @@ import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
 import Home from '../pages/Places/Home';
 import Map from '../pages/Places/Map';
+import Order from '../pages/Check/Order';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -40,9 +41,8 @@ function favoritesSTack() {
 
 function checkStack() {
     return (
-        <Stack.Navigator initialRouteName="SignInScreen" headerMode="none">
-            <Stack.Screen name="HomeScreen" component={Home} />
-            <Stack.Screen name="MapScreen" component={Map} />
+        <Stack.Navigator initialRouteName="OrderScreen" headerMode="none">
+            <Stack.Screen name="OrderScreen" component={Order} />
         </Stack.Navigator>
     );
 }

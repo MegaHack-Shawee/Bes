@@ -44,7 +44,7 @@ const Map = ({navigation}) => {
         return places.map(place => (
             <Place
                 key={place.id}
-                onPress={() => navigation.navigate('HomeScreen')}>
+                onPress={() => navigation.navigate('HomeScreen', {place})}>
                 <PlaceInfo>
                     <Text color="#808080" weight="bold">
                         {place.name}

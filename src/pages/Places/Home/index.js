@@ -6,6 +6,7 @@ import Container from '../../../components/Container';
 import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
 import Text from '../../../components/Text';
+import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
 import {
     PlaceName,
@@ -41,9 +42,10 @@ const items = [
     },
 ];
 
-const Home = ({navigation}) => {
+const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
     const [numberOfTables, setNumberOfTables] = useState(1);
+    const {place} = route.params;
 
     function handleAddTable() {
         if (numberOfTables <= 9) {
@@ -59,7 +61,7 @@ const Home = ({navigation}) => {
         <Container>
             <Header callback={() => navigation.goBack()} />
             <Modal>
-                <PlaceName>Place Name</PlaceName>
+                <Place place={place} />
                 <Body>
                     <Row>
                         <Buttons>
@@ -93,19 +95,19 @@ const Home = ({navigation}) => {
                     {tab === 'reservation' && (
                         <>
                             <ReservationData>
-                                <Text color="#1c1c1c" weight="bold">
+                                <Text color="#808080" weight="bold">
                                     Data
                                 </Text>
                                 <Text>00/00</Text>
                             </ReservationData>
                             <ReservationData>
-                                <Text color="#1c1c1c" weight="bold">
+                                <Text color="#808080" weight="bold">
                                     Horário
                                 </Text>
                                 <Text>00:00</Text>
                             </ReservationData>
                             <ReservationData>
-                                <Text color="#1c1c1c" weight="bold">
+                                <Text color="#808080" weight="bold">
                                     Quantidade de mesas
                                 </Text>
                                 <NumberOfTables>

@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import Container from '../../components/Container';
-import Header from '../../components/Header';
-import Modal from '../../components/Modal';
-import Text from '../../components/Text';
-import MenuItemList from '../../components/MenuItemList';
+import Container from '../../../components/Container';
+import Header from '../../../components/Header';
+import Modal from '../../../components/Modal';
+import Text from '../../../components/Text';
+import MenuItemList from '../../../components/MenuItemList';
 import {
     PlaceName,
     Body,
@@ -67,7 +67,7 @@ const Home = ({navigation}) => {
                                 onPress={() => setTab('menu')}
                                 borderRight="1px">
                                 <Text
-                                    color={tab === 'menu' ? '#e25822' : '#ddd'}>
+                                    color={tab === 'menu' ? '#ff5300' : '#ddd'}>
                                     Menu
                                 </Text>
                             </Touch>
@@ -75,7 +75,7 @@ const Home = ({navigation}) => {
                                 <Text
                                     color={
                                         tab === 'reservation'
-                                            ? '#e25822'
+                                            ? '#ff5300'
                                             : '#ddd'
                                     }>
                                     Reserva
@@ -86,7 +86,7 @@ const Home = ({navigation}) => {
                             <Text size="15px" weight="bold">
                                 5.0
                             </Text>
-                            <Icon name="star" color="#ffd700" size={25} />
+                            <Icon name="star" color="#ffcc00" size={25} />
                         </Stars>
                     </Row>
                     {tab === 'menu' && <MenuItemList items={items} />}

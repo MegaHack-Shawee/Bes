@@ -4,7 +4,7 @@ export const PlaceName = styled.Text`
     align-self: center;
     font-size: 20px;
     font-weight: bold;
-    color: #e25822;
+    color: #ff5300;
     margin-top: 20px;
 `;
 

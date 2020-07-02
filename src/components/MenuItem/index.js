@@ -15,7 +15,7 @@ const MenuItem = ({item}) => {
                     {item.description}
                 </Text>
                 <Text
-                    color="#e25822"
+                    color="#ff5300"
                     size="12px"
                     weight="bold"
                     numberOfLines={1}>

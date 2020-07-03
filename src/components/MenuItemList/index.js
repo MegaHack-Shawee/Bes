@@ -2,11 +2,11 @@ import React from 'react';
 import {FlatList} from 'react-native';
 
 import MenuItem from '../MenuItem';
-// import { Container } from './styles';
+import {ItemList} from './styles';
 
 const MenuItemList = ({items}) => {
     return (
-        <FlatList
+        <ItemList
             data={items}
             keyExtractor={item => item.id}
             renderItem={({item}) => <MenuItem item={item} />}

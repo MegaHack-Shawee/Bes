@@ -2,7 +2,7 @@ import React from 'react';
 import {FlatList} from 'react-native';
 
 import OrderItem from '../OrderItem';
-// import { Container } from './styles';
+import {OrderList} from './styles';
 
 const MenuItemList = ({items}) => {
     function handleOrder() {
@@ -10,7 +10,7 @@ const MenuItemList = ({items}) => {
     }
 
     return (
-        <FlatList
+        <OrderList
             data={items}
             keyExtractor={item => item.id}
             renderItem={({item}) => (

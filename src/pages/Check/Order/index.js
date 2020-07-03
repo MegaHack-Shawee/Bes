@@ -48,6 +48,18 @@ const items = [
         description: 'skol, brahma ou antarctica',
         price: '72,00',
     },
+    {
+        id: '4',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72,00',
+    },
+    {
+        id: '5',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72,00',
+    },
 ];
 
 const Order = () => {

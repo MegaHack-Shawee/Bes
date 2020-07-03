@@ -53,11 +53,66 @@ export const Button = styled.TouchableOpacity`
     align-items: center;
     justify-content: center;
     background: #ff5300;
+    width: ${props => props.width || 'undefined'};
+    align-self: center;
 `;
 
 export const TableInfo = styled.View`
     width: 100%;
     padding: 10px;
     align-items: center;
-    border: 1px solid #ff5300;
+    border: ${props => props.border || '1px solid #ff5300'};
+`;
+
+export const Check = styled.View`
+    margin-top: 30px;
+    padding: 0 30px;
+`;
+
+export const CheckStatus = styled.View`
+    margin-top: 10px;
+    padding: 5px;
+    align-items: center;
+`;
+
+export const Footer = styled.View`
+    border-top-width: 1px;
+    border-top-color: #808080;
+`;
+
+export const CheckItemsList = styled.FlatList`
+    height: 180px;
+`;
+
+export const CheckItem = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top-width: 1px;
+    border-top-color: #ddd;
+`;
+
+export const Total = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+`;
+
+export const Payment = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 5px;
+`;
+
+export const Info = styled.View`
+    width: ${props => props.width};
+`;
+
+export const PaymentCode = styled.View`
+    align-items: center;
 `;

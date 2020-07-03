@@ -57,43 +57,49 @@ function checkStack() {
     );
 }
 
+function TabScreens() {
+    return (
+        <Tab.Navigator
+            screenOptions={({route}) => ({
+                tabBarIcon: ({focused, color, size}) => {
+                    let icon;
+
+                    if (route.name === 'Estabelecimentos') {
+                        icon = focused ? places_red_icon : places_grey_icon;
+                    } else if (route.name === 'Cash Bes') {
+                        icon = focused ? cashbes_red_icon : cashbes_grey_icon;
+                    } else if (route.name === 'Favoritos') {
+                        icon = focused ? favorite_red_icon : favorite_grey_icon;
+                    } else if (route.name === 'Comanda') {
+                        icon = focused ? check_red_icon : check_grey_icon;
+                    }
+
+                    return <Image source={icon} />;
+                },
+            })}
+            tabBarOptions={{
+                activeTintColor: '#ff5300',
+                inactiveTintColor: 'gray',
+                style: {
+                    borderTopColor: '#ff5300',
+                },
+            }}>
+            <Tab.Screen name="Estabelecimentos" component={placesStack} />
+            <Tab.Screen name="Cash Bes" component={cashBesStack} />
+            <Tab.Screen name="Favoritos" component={favoritesSTack} />
+            <Tab.Screen name="Comanda" component={checkStack} />
+        </Tab.Navigator>
+    );
+}
+
 export default function Routes() {
     return (
         <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={({route}) => ({
-                    tabBarIcon: ({focused, color, size}) => {
-                        let icon;
-
-                        if (route.name === 'Estabelecimentos') {
-                            icon = focused ? places_red_icon : places_grey_icon;
-                        } else if (route.name === 'Cash Bes') {
-                            icon = focused
-                                ? cashbes_red_icon
-                                : cashbes_grey_icon;
-                        } else if (route.name === 'Favoritos') {
-                            icon = focused
-                                ? favorite_red_icon
-                                : favorite_grey_icon;
-                        } else if (route.name === 'Comanda') {
-                            icon = focused ? check_red_icon : check_grey_icon;
-                        }
-
-                        return <Image source={icon} />;
-                    },
-                })}
-                tabBarOptions={{
-                    activeTintColor: '#ff5300',
-                    inactiveTintColor: 'gray',
-                    style: {
-                        borderTopColor: '#ff5300',
-                    },
-                }}>
-                <Tab.Screen name="Estabelecimentos" component={placesStack} />
-                <Tab.Screen name="Cash Bes" component={cashBesStack} />
-                <Tab.Screen name="Favoritos" component={favoritesSTack} />
-                <Tab.Screen name="Comanda" component={checkStack} />
-            </Tab.Navigator>
+            <Stack.Navigator initialRouteName="SignInScreen" headerMode="none">
+                <Stack.Screen name="SignInScreen" component={SignIn} />
+                <Stack.Screen name="SignUpScreen" component={SignUp} />
+                <Stack.Screen name="TabsScreen" component={TabScreens} />
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }

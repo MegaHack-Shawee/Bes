@@ -75,9 +75,9 @@ const items = [
 
 const Order = () => {
     const [tab, setTab] = useState('menu');
-    const [tableNumber, setTableNumber] = useState('27');
+    const [tableNumber, setTableNumber] = useState('');
     const [isTableSet, setIsTableSet] = useState(false);
-    const [isCheckClosed, setIsCheckClosed] = useState(true);
+    const [isCheckClosed, setIsCheckClosed] = useState(false);
     const [isPaid, setIsPaid] = useState(false);
 
     return (

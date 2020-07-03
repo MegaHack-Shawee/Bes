@@ -8,12 +8,12 @@ import Button from '../../components/Button';
 import Text from '../../components/Text';
 // import { Container } from './styles';
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
     const [name, setName] = useState('');
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     function handleSignUp() {
-        console.warn('Signing up');
+        navigation.replace('TabsScreen');
     }
 
     return (

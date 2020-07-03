@@ -36,7 +36,7 @@ const SignIn = ({navigation}) => {
     }, [email, emailError, password, passwordError]);
 
     function handleSignIn() {
-        navigation.navigate('HomeScreen');
+        navigation.replace('TabsScreen');
     }
 
     return (

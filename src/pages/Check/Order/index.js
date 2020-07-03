@@ -8,6 +8,7 @@ import Modal from '../../../components/Modal';
 import Text from '../../../components/Text';
 import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
+import OrderItemList from '../../../components/OrderItemList';
 import {
     Body,
     Row,
@@ -27,6 +28,27 @@ const place = {
     number: '1027',
     distance: '7.8 km',
 };
+
+const items = [
+    {
+        id: '1',
+        name: 'pizza',
+        description: 'calabresa com cebola',
+        price: '50,00',
+    },
+    {
+        id: '2',
+        name: 'petiscos',
+        description: 'calabresa, frango, carne, azeitona',
+        price: '35,00',
+    },
+    {
+        id: '3',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72,00',
+    },
+];
 
 const Order = () => {
     const [tab, setTab] = useState('menu');
@@ -83,10 +105,10 @@ const Order = () => {
                     )}
                     {isTableSet && (
                         <TableInfo>
-                            <Text color="#fff">{tableNumber}</Text>
+                            <Text color="#ff5300">{tableNumber}</Text>
                         </TableInfo>
                     )}
-                    {tab === 'menu' && <Text>Menu list</Text>}
+                    {tab === 'menu' && <OrderItemList items={items} />}
                     {tab === 'order' && <Text>Order</Text>}
                 </Body>
             </Modal>

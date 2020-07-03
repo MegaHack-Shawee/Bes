@@ -85,6 +85,9 @@ export default function Routes() {
                 tabBarOptions={{
                     activeTintColor: '#ff5300',
                     inactiveTintColor: 'gray',
+                    style: {
+                        borderTopColor: '#ff5300',
+                    },
                 }}>
                 <Tab.Screen name="Estabelecimentos" component={placesStack} />
                 <Tab.Screen name="Cash Bes" component={cashBesStack} />

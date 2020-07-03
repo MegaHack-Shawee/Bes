@@ -59,5 +59,5 @@ export const TableInfo = styled.View`
     width: 100%;
     padding: 10px;
     align-items: center;
-    background: #ff5300;
+    border: 1px solid #ff5300;
 `;

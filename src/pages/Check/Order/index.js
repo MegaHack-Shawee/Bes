@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
 import {Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import cardIcon from '../../../assets/icons/card_icon.png';
+
+import {addItem} from '../../../store/modules/Order/actions';
 
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
@@ -32,7 +35,7 @@ import {
     PaymentCode,
 } from './styles';
 
-const Order = ({route, navigation}) => {
+const Order = ({navigation}) => {
     const [tab, setTab] = useState('menu');
     const [tableNumber, setTableNumber] = useState('');
     const [isTableSet, setIsTableSet] = useState(false);
@@ -41,6 +44,8 @@ const Order = ({route, navigation}) => {
 
     const place = navigation.dangerouslyGetParent().getParam('place');
     const menu = navigation.dangerouslyGetParent().getParam('menu');
+
+    const dispatch = useDispatch();
 
     function handleAdd() {
         setTab('order');

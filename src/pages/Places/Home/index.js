@@ -22,19 +22,54 @@ import {
     PlusLessButton,
 } from './styles';
 
+const items = [
+    {
+        id: '1',
+        name: 'pizza',
+        description: 'calabresa com cebola',
+        price: '50,00',
+    },
+    {
+        id: '2',
+        name: 'petiscos',
+        description: 'calabresa, frango, carne, azeitona',
+        price: '35,00',
+    },
+    {
+        id: '3',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72,00',
+    },
+    {
+        id: '4',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72,00',
+    },
+    {
+        id: '5',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72,00',
+    },
+];
+
 const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
     const [numberOfTables, setNumberOfTables] = useState(1);
     const [menu, setMenu] = useState([]);
     const {place} = route.params;
 
-    useEffect(() => {
-        setMenu(mockedMenus.getMenuById(place.id));
-    }, [place.id]);
+    // useEffect(() => {
+    //     setMenu(mockedMenus.getMenuById(place.id));
+    // }, [place.id]);
 
     function handleGoToOrderMenu() {
-        navigation.navigate('Comanda', {Place, menu});
-        //Passar o restaurante como parametro para a rota
+        navigation.navigate('Comanda', {
+            place,
+            menu: items,
+        });
     }
 
     function handleAddTable() {
@@ -81,9 +116,9 @@ const Home = ({route, navigation}) => {
                             <Icon name="star" color="#ffcc00" size={25} />
                         </Stars>
                     </Row>
-                    {tab === 'menu' && menu.length > 0 && (
-                        <>
-                            <MenuItemList items={menu} />
+                    {tab === 'menu' && (
+                        /*menu.length > 0 &&*/ <>
+                            <MenuItemList items={items} />
                             <Button
                                 padding="8px 15px"
                                 onPress={handleGoToOrderMenu}>

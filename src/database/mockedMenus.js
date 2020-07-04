@@ -1,7 +1,7 @@
 class Menus {
     menus = [
         {
-            id: 1,
+            id: '1',
             items: [
                 {
                     id: '1',
@@ -36,7 +36,7 @@ class Menus {
             ],
         },
         {
-            id: 2,
+            id: '2',
             items: [
                 {
                     id: '1',
@@ -71,7 +71,7 @@ class Menus {
             ],
         },
         {
-            id: 3,
+            id: '3',
             items: [
                 {
                     id: '1',
@@ -106,7 +106,7 @@ class Menus {
             ],
         },
         {
-            id: 4,
+            id: '4',
             items: [
                 {
                     id: '1',
@@ -141,7 +141,7 @@ class Menus {
             ],
         },
         {
-            id: 5,
+            id: '5',
             items: [
                 {
                     id: '1',
@@ -176,7 +176,7 @@ class Menus {
             ],
         },
         {
-            id: 6,
+            id: '6',
             items: [
                 {
                     id: '1',

@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
-import Places from './Places/reducer';
+import Order from './Order/reducer';
 
 export default combineReducers({
-    Places,
+    Order,
 });

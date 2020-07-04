@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
+import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import map from '../../../assets/images/map.png';
@@ -8,7 +7,7 @@ import Container from '../../../components/Container';
 import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
 import Text from '../../../components/Text';
-import Button from '../../../components/Button';
+import mockedPlaces from '../../../database/mockedPlaces';
 import {
     Body,
     InputView,
@@ -20,25 +19,13 @@ import {
     PlaceIcon,
 } from './styles';
 
-const places = [
-    {
-        id: '1',
-        name: 'Fulanos bar',
-        street: 'Av. Paulista',
-        number: '1027',
-        distance: '7.8 km',
-    },
-    {
-        id: '2',
-        name: 'Beltranos bar & lanchonete',
-        street: 'Av. Paulista',
-        number: '1900',
-        distance: '11.2 km',
-    },
-];
-
 const Map = ({navigation}) => {
     const [found, setFound] = useState(false);
+    const [places, setPlaces] = useState([]);
+
+    useEffect(() => {
+        setPlaces(mockedPlaces.getPlaces());
+    }, []);
 
     function renderPlaces() {
         return places.map(place => (
@@ -91,4 +78,5 @@ const Map = ({navigation}) => {
         </Container>
     );
 };
+
 export default Map;

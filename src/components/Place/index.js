@@ -4,8 +4,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Text from '../Text';
 import {PlaceView, PlaceInfo, PlaceLogo} from './styles';
+import {useFavorites} from '../../hooks/useFavorites';
 
 const Place = ({place}) => {
+    const {addToFavorites} = useFavorites();
+
     return (
         <PlaceView>
             <PlaceLogo />
@@ -24,7 +27,12 @@ const Place = ({place}) => {
                     {place.distance}
                 </Text>
             </PlaceInfo>
-            <Icon name="star-border" color="#808080" size={35} />
+            <Icon
+                name="star-border"
+                color="#808080"
+                size={35}
+                onPress={() => addToFavorites(place)}
+            />
         </PlaceView>
     );
 };

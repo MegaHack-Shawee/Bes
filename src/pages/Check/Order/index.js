@@ -32,14 +32,6 @@ import {
     PaymentCode,
 } from './styles';
 
-const place = {
-    id: '1',
-    name: 'Fulanos bar',
-    street: 'Av. Paulista',
-    number: '1027',
-    distance: '7.8 km',
-};
-
 const items = [
     {
         id: '1',
@@ -73,12 +65,18 @@ const items = [
     },
 ];
 
-const Order = () => {
+const Order = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
     const [tableNumber, setTableNumber] = useState('');
     const [isTableSet, setIsTableSet] = useState(false);
     const [isCheckClosed, setIsCheckClosed] = useState(false);
     const [isPaid, setIsPaid] = useState(false);
+
+    const place = navigation.dangerouslyGetParent().getParam('place');
+
+    function handleAdd() {
+        setTab('order');
+    }
 
     return (
         <Container>
@@ -138,7 +136,17 @@ const Order = () => {
                         </TableInfo>
                     )}
                     {tab === 'menu' && !isCheckClosed && (
-                        <OrderItemList items={items} />
+                        <>
+                            <OrderItemList items={items} />
+                            {isTableSet && (
+                                <Button
+                                    width="170px"
+                                    padding="5px 10px"
+                                    onPress={handleAdd}>
+                                    <Text color="#fff">Adicionar</Text>
+                                </Button>
+                            )}
+                        </>
                     )}
                     {tab === 'menu' && isCheckClosed && (
                         <>

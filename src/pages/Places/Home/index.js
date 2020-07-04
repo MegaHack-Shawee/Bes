@@ -60,7 +60,7 @@ const Home = ({route, navigation}) => {
     const {place} = route.params;
 
     function handleGoToOrderMenu() {
-        navigation.navigate('Comanda');
+        navigation.navigate('Comanda', {Place});
         //Passar o restaurante como parametro para a rota
     }
 

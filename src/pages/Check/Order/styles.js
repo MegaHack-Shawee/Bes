@@ -49,7 +49,7 @@ export const Input = styled.TextInput`
 `;
 
 export const Button = styled.TouchableOpacity`
-    padding: 10px 15px;
+    padding: ${props => props.padding || '10px 15px'};
     align-items: center;
     justify-content: center;
     background: #ff5300;

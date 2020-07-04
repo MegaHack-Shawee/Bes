@@ -50,10 +50,6 @@ class Places {
         },
     ];
 
-    getPlaces() {
-        return this.places;
-    }
-
     getPlacesByStreetOrZipcode(filter) {
         return this.places.filter(
             place =>
@@ -66,10 +62,6 @@ class Places {
         return this.places.filter(
             place => place.name.toUpperCase() === filter.toUpperCase(),
         );
-    }
-
-    addPlace(place) {
-        this.places.push(place);
     }
 }
 

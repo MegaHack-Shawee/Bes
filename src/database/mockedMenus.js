@@ -213,7 +213,7 @@ class Menus {
     ];
 
     getMenuById(id) {
-        return this.menus.filter(menu => menu.id === id).items;
+        return this.menus.filter(menu => String(menu.id) === String(id));
     }
 }
 

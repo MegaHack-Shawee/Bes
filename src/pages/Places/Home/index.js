@@ -59,6 +59,11 @@ const Home = ({route, navigation}) => {
     const [numberOfTables, setNumberOfTables] = useState(1);
     const {place} = route.params;
 
+    function handleGoToOrderMenu() {
+        navigation.navigate('Comanda');
+        //Passar o restaurante como parametro para a rota
+    }
+
     function handleAddTable() {
         if (numberOfTables <= 9) {
             setNumberOfTables(numberOfTables + 1);
@@ -103,7 +108,16 @@ const Home = ({route, navigation}) => {
                             <Icon name="star" color="#ffcc00" size={25} />
                         </Stars>
                     </Row>
-                    {tab === 'menu' && <MenuItemList items={items} />}
+                    {tab === 'menu' && (
+                        <>
+                            <MenuItemList items={items} />
+                            <Button
+                                padding="8px 15px"
+                                onPress={handleGoToOrderMenu}>
+                                <Text color="#fff">Entrar no menu</Text>
+                            </Button>
+                        </>
+                    )}
                     {tab === 'reservation' && (
                         <>
                             <ReservationData>

@@ -46,7 +46,7 @@ export const ReservationData = styled.View`
 
 export const Button = styled.TouchableOpacity`
     background: #e25822;
-    padding: 12px 60px;
+    padding: ${props => props.padding || '12px 60px'};
     align-self: center;
     margin-top: 20px;
 `;

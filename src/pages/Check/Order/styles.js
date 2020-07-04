@@ -116,3 +116,55 @@ export const Info = styled.View`
 export const PaymentCode = styled.View`
     align-items: center;
 `;
+
+export const CheckModal = styled.View`
+    flex: 1;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+`;
+
+export const CheckView = styled.View`
+    background: #fff;
+    width: 350px;
+    height: 450px;
+    padding: 30px;
+`;
+
+export const PlaceView = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    margin-top: 20px;
+`;
+
+export const PlaceInfo = styled.View``;
+
+export const PlaceLogo = styled.View`
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #808080;
+`;
+
+export const PaymentButtons = styled.View`
+    flex-direction: row;
+`;
+
+export const PaymentButton = styled.TouchableOpacity`
+    width: ${props => props.width};
+    background: ${props => props.background};
+    align-items: center;
+    padding: 5px 0;
+    border: 2px solid #ff5300;
+`;
+
+export const Title = styled.View`
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom-width: 2px;
+    border-bottom-color: #ff5300;
+    margin-top: 10px;
+`;

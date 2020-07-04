@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -8,6 +8,7 @@ import Modal from '../../../components/Modal';
 import Text from '../../../components/Text';
 import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
+import mockedMenus from '../../../database/mockedMenus';
 import {
     PlaceName,
     Body,
@@ -21,46 +22,19 @@ import {
     PlusLessButton,
 } from './styles';
 
-const items = [
-    {
-        id: '1',
-        name: 'pizza',
-        description: 'calabresa com cebola',
-        price: '50,00',
-    },
-    {
-        id: '2',
-        name: 'petiscos',
-        description: 'calabresa, frango, carne, azeitona',
-        price: '35,00',
-    },
-    {
-        id: '3',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72,00',
-    },
-    {
-        id: '4',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72,00',
-    },
-    {
-        id: '5',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72,00',
-    },
-];
-
 const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
     const [numberOfTables, setNumberOfTables] = useState(1);
+    const [menu, setMenu] = useState([]);
     const {place} = route.params;
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        setMenu(mockedMenus.getMenuById(place.id));
+    });
+
     function handleGoToOrderMenu() {
-        navigation.navigate('Comanda', {Place, menu: items});
+        navigation.navigate('Comanda', {Place, menu});
         //Passar o restaurante como parametro para a rota
     }
 
@@ -108,9 +82,9 @@ const Home = ({route, navigation}) => {
                             <Icon name="star" color="#ffcc00" size={25} />
                         </Stars>
                     </Row>
-                    {tab === 'menu' && (
+                    {tab === 'menu' && menu.length > 0 && (
                         <>
-                            <MenuItemList items={items} />
+                            <MenuItemList items={menu} />
                             <Button
                                 padding="8px 15px"
                                 onPress={handleGoToOrderMenu}>

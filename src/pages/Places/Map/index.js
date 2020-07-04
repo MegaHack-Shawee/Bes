@@ -20,12 +20,24 @@ import {
 } from './styles';
 
 const Map = ({navigation}) => {
+    const [name, setName] = useState('');
+    const [streetOrZipcode, setStreetOrZipcode] = useState('');
     const [found, setFound] = useState(false);
     const [places, setPlaces] = useState([]);
 
-    useEffect(() => {
-        setPlaces(mockedPlaces.getPlaces());
-    }, []);
+    function filterByName() {
+        setPlaces(mockedPlaces.getPlacesByName(name));
+        if (places.length > 0) {
+            setFound(true);
+        }
+    }
+
+    function filterByStreetOrZipcode() {
+        setPlaces(mockedPlaces.getPlacesByStreetOrZipcode(streetOrZipcode));
+        if (places.length > 0) {
+            setFound(true);
+        }
+    }
 
     function renderPlaces() {
         return places.map(place => (
@@ -57,8 +69,10 @@ const Map = ({navigation}) => {
                         <Input
                             placeholder="Rua/CEP"
                             placeholderTextColor="#ddd"
+                            value={streetOrZipcode}
+                            onChangeText={setStreetOrZipcode}
                         />
-                        <Touch onPress={() => setFound(!found)}>
+                        <Touch onPress={filterByStreetOrZipcode}>
                             <Icon name="search" color="#ddd" size={30} />
                         </Touch>
                     </InputView>
@@ -66,8 +80,10 @@ const Map = ({navigation}) => {
                         <Input
                             placeholder="Nome do estabelecimento"
                             placeholderTextColor="#ddd"
+                            value={name}
+                            onChangeText={setName}
                         />
-                        <Touch onPress={() => setFound(!found)}>
+                        <Touch onPress={filterByName}>
                             <Icon name="search" color="#ddd" size={30} />
                         </Touch>
                     </InputView>

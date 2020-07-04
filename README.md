@@ -15,18 +15,16 @@
 
 <p align="center">		 
 
-  <img alt="Language" src="https://img.shields.io/github/languages/top/MegaHack-Shawee/VitrineAmericanas?style=for-the-badge">
+  <img alt="Language" src="https://img.shields.io/github/languages/top/MegaHack-Shawee/Ambev?style=for-the-badge">
 	
-  <a href="https://www.linkedin.com/in/higormartinsdasilva/" target="_blank">
-    <img alt="Made by Higor Martins" src="https://img.shields.io/github/languages/count/MegaHack-Shawee/VitrineAmericanas?style=for-the-badge">
+  <img alt="Made by Higor Martins" src="https://img.shields.io/github/languages/count/MegaHack-Shawee/Ambev?style=for-the-badge">
+
+  <a href="https://github.com/MegaHack-Shawee/Ambev" target="_blank">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MegaHack-Shawee/Ambev?style=for-the-badge">
   </a>
 
-  <a href="https://github.com/MegaHack-Shawee/VitrineAmericanas" target="_blank">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/MegaHack-Shawee/VitrineAmericanas?style=for-the-badge">
-  </a>
-
-   <a href="https://github.com/MegaHack-Shawee/VitrineAmericanas/stargazers" target="_blank">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/MegaHack-Shawee/VitrineAmericanas?style=for-the-badge">
+   <a href="https://github.com/MegaHack-Shawee/Ambev/stargazers" target="_blank">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/MegaHack-Shawee/Ambev?style=for-the-badge">
   </a>
   
 </p>

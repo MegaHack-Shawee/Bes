@@ -5,7 +5,7 @@ export default function Order(state = INITIAL_STATE, action) {
     return produce(state, draft => {
         switch (action.type) {
             case '@Order/ADD_ITEM': {
-                draft.push(action.orderItem);
+                draft.push(action.item);
                 break;
             }
             case '@Order/REMOVE_ITEM': {

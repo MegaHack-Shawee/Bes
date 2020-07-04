@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import {setCurrentPlace} from '../../../store/modules/CurrentPlace/actions';
+import {setCurrentMenu} from '../../../store/modules/CurrentMenu/actions';
 
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
@@ -59,6 +63,7 @@ const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
     const [numberOfTables, setNumberOfTables] = useState(1);
     const [menu, setMenu] = useState([]);
+    const dispatch = useDispatch();
     const {place} = route.params;
 
     // useEffect(() => {
@@ -66,10 +71,9 @@ const Home = ({route, navigation}) => {
     // }, [place.id]);
 
     function handleGoToOrderMenu() {
-        navigation.navigate('Comanda', {
-            place,
-            menu: items,
-        });
+        dispatch(setCurrentPlace(place));
+        dispatch(setCurrentMenu(items));
+        navigation.navigate('Comanda');
     }
 
     function handleAddTable() {

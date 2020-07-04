@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {Image} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
@@ -14,6 +14,7 @@ import Text from '../../../components/Text';
 import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
 import OrderItemList from '../../../components/OrderItemList';
+import OrderList from '../../../components/Order';
 import {
     Body,
     Row,
@@ -42,12 +43,14 @@ const Order = ({navigation}) => {
     const [isCheckClosed, setIsCheckClosed] = useState(false);
     const [isPaid, setIsPaid] = useState(false);
 
-    const place = navigation.dangerouslyGetParent().getParam('place');
-    const menu = navigation.dangerouslyGetParent().getParam('menu');
+    const place = useSelector(state => state.CurrentPlace);
+    const menu = useSelector(state => state.CurrentMenu);
 
     const dispatch = useDispatch();
 
-    function handleAdd() {
+    const order = useSelector(state => state.Order);
+
+    function handleOrder() {
         setTab('order');
     }
 
@@ -115,8 +118,8 @@ const Order = ({navigation}) => {
                                 <Button
                                     width="170px"
                                     padding="5px 10px"
-                                    onPress={handleAdd}>
-                                    <Text color="#fff">Adicionar</Text>
+                                    onPress={handleOrder}>
+                                    <Text color="#fff">Pedir</Text>
                                 </Button>
                             )}
                         </>
@@ -212,7 +215,7 @@ const Order = ({navigation}) => {
                             </Footer>
                         </>
                     )}
-                    {tab === 'order' && <Text>Order</Text>}
+                    {tab === 'order' && <OrderList items={order} />}
                 </Body>
             </Modal>
         </Container>

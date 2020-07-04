@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
 import {View} from 'react-native';
+import {useDispatch} from 'react-redux';
+
+import {addItem} from '../../store/modules/Order/actions';
 
 import Text from '../Text';
 import {
@@ -16,19 +19,25 @@ import {
     PlusLessButton,
 } from './styles';
 
-const OrderItem = ({item, callback}) => {
+const OrderItem = ({item}) => {
     const [checked, setChecked] = useState(false);
-    const [numberOfItems, setNumberOfItems] = useState(1);
+    const [ammount, setAmmount] = useState(1);
+    const dispatch = useDispatch();
 
     function handleAddItem() {
-        if (numberOfItems <= 9) {
-            setNumberOfItems(numberOfItems + 1);
+        if (ammount <= 9) {
+            setAmmount(ammount + 1);
         }
     }
     function handleRemoveItem() {
-        if (numberOfItems > 1) {
-            setNumberOfItems(numberOfItems - 1);
+        if (ammount > 1) {
+            setAmmount(ammount - 1);
         }
+    }
+
+    function handleOrder() {
+        dispatch(addItem({item, ammount}));
+        setChecked(false);
     }
 
     return (
@@ -60,7 +69,7 @@ const OrderItem = ({item, callback}) => {
             </Row>
             {checked && (
                 <OrderButtonsRow>
-                    <OrderButton onPress={callback}>
+                    <OrderButton onPress={() => handleOrder()}>
                         <Text color="#fff" weight="bold">
                             Pedir
                         </Text>
@@ -69,7 +78,7 @@ const OrderItem = ({item, callback}) => {
                         <PlusLessButton onPress={handleRemoveItem}>
                             <Text weight="bold">-</Text>
                         </PlusLessButton>
-                        <Text>{numberOfItems}</Text>
+                        <Text>{ammount}</Text>
                         <PlusLessButton onPress={handleAddItem}>
                             <Text weight="bold" color="#ff5300">
                                 +

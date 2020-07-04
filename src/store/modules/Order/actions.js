@@ -1,10 +1,7 @@
-export const addItem = (item, ammount) => {
+export const addItem = item => {
     return {
         type: '@Order/ADD_ITEM',
-        orderItem: {
-            item,
-            ammount,
-        },
+        item,
     };
 };
 

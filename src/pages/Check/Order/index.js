@@ -32,39 +32,6 @@ import {
     PaymentCode,
 } from './styles';
 
-const items = [
-    {
-        id: '1',
-        name: 'pizza',
-        description: 'calabresa com cebola',
-        price: '50,00',
-    },
-    {
-        id: '2',
-        name: 'petiscos',
-        description: 'calabresa, frango, carne, azeitona',
-        price: '35,00',
-    },
-    {
-        id: '3',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72,00',
-    },
-    {
-        id: '4',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72,00',
-    },
-    {
-        id: '5',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72,00',
-    },
-];
-
 const Order = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
     const [tableNumber, setTableNumber] = useState('');
@@ -73,6 +40,7 @@ const Order = ({route, navigation}) => {
     const [isPaid, setIsPaid] = useState(false);
 
     const place = navigation.dangerouslyGetParent().getParam('place');
+    const menu = navigation.dangerouslyGetParent().getParam('menu');
 
     function handleAdd() {
         setTab('order');
@@ -137,7 +105,7 @@ const Order = ({route, navigation}) => {
                     )}
                     {tab === 'menu' && !isCheckClosed && (
                         <>
-                            <OrderItemList items={items} />
+                            <OrderItemList items={menu} />
                             {isTableSet && (
                                 <Button
                                     width="170px"
@@ -171,7 +139,7 @@ const Order = ({route, navigation}) => {
                                     </Text>
                                 </CheckStatus>
                                 <CheckItemsList
-                                    data={items}
+                                    data={menu}
                                     keyExtractor={item => item.id}
                                     renderItem={({item}) => (
                                         <CheckItem>

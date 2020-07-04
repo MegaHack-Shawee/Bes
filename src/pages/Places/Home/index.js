@@ -28,10 +28,9 @@ const Home = ({route, navigation}) => {
     const [menu, setMenu] = useState([]);
     const {place} = route.params;
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         setMenu(mockedMenus.getMenuById(place.id));
-    });
+    }, [place.id]);
 
     function handleGoToOrderMenu() {
         navigation.navigate('Comanda', {Place, menu});

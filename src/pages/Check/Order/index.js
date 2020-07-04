@@ -12,7 +12,6 @@ import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
 import Text from '../../../components/Text';
 import Place from '../../../components/Place';
-import MenuItemList from '../../../components/MenuItemList';
 import OrderItemList from '../../../components/OrderItemList';
 import OrderList from '../../../components/Order';
 import {

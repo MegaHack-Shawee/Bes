@@ -14,7 +14,6 @@ import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
 import mockedMenus from '../../../database/mockedMenus';
 import {
-    PlaceName,
     Body,
     Row,
     Buttons,

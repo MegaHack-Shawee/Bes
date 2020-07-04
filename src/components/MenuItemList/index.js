@@ -1,5 +1,4 @@
 import React from 'react';
-import {FlatList} from 'react-native';
 
 import MenuItem from '../MenuItem';
 import {ItemList} from './styles';

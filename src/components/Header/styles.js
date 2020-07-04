@@ -9,3 +9,18 @@ export const Row = styled.View`
 `;
 
 export const Touch = styled.TouchableOpacity``;
+
+export const LogoArea = styled.View`
+    width: 54px;
+    height: 54px;
+    align-items: center;
+    justify-content: center;
+    background: #e25822;
+    padding: 10px;
+    border-radius: 27px;
+`;
+
+export const Logo = styled.Image`
+    width: 28px;
+    height: 41px;
+`;

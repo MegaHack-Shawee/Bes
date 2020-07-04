@@ -19,6 +19,7 @@ import Home from '../pages/Places/Home';
 import Map from '../pages/Places/Map';
 import Order from '../pages/Check/Order';
 import Favorites from '../pages/Favorites';
+import CashBes from '../pages/CashBes';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -34,9 +35,8 @@ function placesStack() {
 
 function cashBesStack() {
     return (
-        <Stack.Navigator initialRouteName="SignInScreen" headerMode="none">
-            <Stack.Screen name="HomeScreen" component={Home} />
-            <Stack.Screen name="MapScreen" component={Map} />
+        <Stack.Navigator initialRouteName="CashBes" headerMode="none">
+            <Stack.Screen name="CashBes" component={CashBes} />
         </Stack.Navigator>
     );
 }
@@ -66,7 +66,7 @@ function TabScreens() {
 
                     if (route.name === 'Estabelecimentos') {
                         icon = focused ? places_red_icon : places_grey_icon;
-                    } else if (route.name === 'Cash Bes') {
+                    } else if (route.name === 'CashBes') {
                         icon = focused ? cashbes_red_icon : cashbes_grey_icon;
                     } else if (route.name === 'Favoritos') {
                         icon = focused ? favorite_red_icon : favorite_grey_icon;
@@ -85,7 +85,7 @@ function TabScreens() {
                 },
             }}>
             <Tab.Screen name="Estabelecimentos" component={placesStack} />
-            <Tab.Screen name="Cash Bes" component={cashBesStack} />
+            <Tab.Screen name="CashBes" component={cashBesStack} />
             <Tab.Screen name="Favorites" component={favoritesSTack} />
             <Tab.Screen name="Comanda" component={checkStack} />
         </Tab.Navigator>

@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 
 import Text from '../Text';
 import {Row, Photo, ItemInfo} from './styles';

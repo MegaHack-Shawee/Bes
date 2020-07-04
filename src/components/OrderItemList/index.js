@@ -1,5 +1,4 @@
 import React from 'react';
-import {FlatList} from 'react-native';
 
 import OrderItem from '../OrderItem';
 import {OrderList} from './styles';

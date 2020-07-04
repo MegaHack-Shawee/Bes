@@ -2,8 +2,9 @@ import React from 'react';
 import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
+import logo from '../../assets/icons/splash_icon.png';
 import Text from '../Text';
-import {Row, Touch} from './styles';
+import {Row, Touch, LogoArea, Logo} from './styles';
 
 const Header = ({callback}) => {
     return (
@@ -21,7 +22,9 @@ const Header = ({callback}) => {
             <Text color="#fff" size="18px">
                 BES
             </Text>
-            <Text>Logo</Text>
+            <LogoArea>
+                <Logo source={logo} />
+            </LogoArea>
         </Row>
     );
 };

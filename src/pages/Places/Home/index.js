@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Container from '../../../components/Container';
@@ -10,7 +9,6 @@ import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
 import mockedMenus from '../../../database/mockedMenus';
 import {
-    PlaceName,
     Body,
     Row,
     Buttons,

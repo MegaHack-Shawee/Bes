@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
 
 import Container from '../../components/Container';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
-// import { Container } from './styles';
 
 const SignUp = ({navigation}) => {
     const [name, setName] = useState('');

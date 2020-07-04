@@ -9,15 +9,15 @@ export const isPassword = value => {
 
 export const errors = {
     invalidEmail: {
-        border: '1px solid #f00',
+        border: '2px solid #00f',
         message: 'E-mail inválido',
     },
     invalidPassword: {
-        border: '1px solid #f00',
+        border: '2px solid #00f',
         message: 'Mínimo de 6 caracteres',
     },
     valid: {
-        border: '1px solid #00f',
+        border: 'none',
         message: '',
     },
 };

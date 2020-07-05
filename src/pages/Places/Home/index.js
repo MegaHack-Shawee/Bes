@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -16,7 +16,6 @@ import Modal from '../../../components/Modal';
 import Text from '../../../components/Text';
 import Place from '../../../components/Place';
 import MenuItemList from '../../../components/MenuItemList';
-import mockedMenus from '../../../database/mockedMenus';
 import {
     Body,
     Row,
@@ -33,7 +32,6 @@ import {
     ReservationButton,
     ReservationMessage,
 } from './styles';
-import {ScrollView} from 'react-native-gesture-handler';
 
 const items = [
     {
@@ -80,15 +78,9 @@ const Home = ({route, navigation}) => {
     const [numberOfTables, setNumberOfTables] = useState(1);
     const [isBooked, setIsBooked] = useState(false);
     const [btnColor, setBtnColor] = useState('#e25822');
-    // const [menu, setMenu] = useState([]);
     const dispatch = useDispatch();
     const {place} = route.params;
     console.log(place);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    // useEffect(() => {
-    //     setMenu(mockedMenus.getMenus());
-    // });
 
     function handleGoToOrderMenu() {
         dispatch(setCurrentPlace(place));

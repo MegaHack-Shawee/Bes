@@ -12,9 +12,7 @@ export const PlaceInfo = styled.View`
     width: 50%;
 `;
 
-export const PlaceLogo = styled.View`
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background: #808080;
+export const PlaceLogo = styled.Image`
+    width: 70px;
+    height: 70px;
 `;

@@ -21,9 +21,7 @@ const MenuItem = ({item}) => {
                     R$ {item.price}
                 </Text>
             </ItemInfo>
-            <Photo>
-                <Text>Foto</Text>
-            </Photo>
+            <Photo source={item.photo} />
         </Row>
     );
 };

@@ -26,9 +26,7 @@ const renderItem = order => {
                         R$ {order.item.price}
                     </Text>
                 </ItemInfo>
-                <Photo>
-                    <Text>Foto</Text>
-                </Photo>
+                <Photo source={order.item.photo} />
             </Row>
         </ItemBody>
     );

@@ -4,13 +4,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Text from '../Text';
 import {PlaceView, PlaceInfo, PlaceLogo} from './styles';
 import {useFavorites} from '../../hooks/useFavorites';
+import placeLogo from '../../assets/images/place_logo.png';
 
 const Place = ({place}) => {
     const {addToFavorites} = useFavorites();
 
     return (
         <PlaceView>
-            <PlaceLogo />
+            <PlaceLogo source={placeLogo} />
             <PlaceInfo>
                 <Text
                     size="18px"

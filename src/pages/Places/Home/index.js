@@ -6,6 +6,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {setCurrentPlace} from '../../../store/modules/CurrentPlace/actions';
 import {setCurrentMenu} from '../../../store/modules/CurrentMenu/actions';
 
+import petisco from '../../../assets/images/petisco.jpg';
+import pizza from '../../../assets/images/pizza.jpg';
+import longneck from '../../../assets/images/longneck.jpg';
+
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
@@ -25,38 +29,43 @@ import {
     PlusLessButton,
 } from './styles';
 
-// const items = [
-//     {
-//         id: '1',
-//         name: 'pizza',
-//         description: 'calabresa com cebola',
-//         price: '50.00',
-//     },
-//     {
-//         id: '2',
-//         name: 'petiscos',
-//         description: 'calabresa, frango, carne, azeitona',
-//         price: '35.00',
-//     },
-//     {
-//         id: '3',
-//         name: 'Combo long neck 6un',
-//         description: 'skol, brahma ou antarctica',
-//         price: '72.00',
-//     },
-//     {
-//         id: '4',
-//         name: 'Combo long neck 6un',
-//         description: 'skol, brahma ou antarctica',
-//         price: '72.00',
-//     },
-//     {
-//         id: '5',
-//         name: 'Combo long neck 6un',
-//         description: 'skol, brahma ou antarctica',
-//         price: '72.00',
-//     },
-// ];
+const items = [
+    {
+        id: '1',
+        name: 'pizza',
+        description: 'calabresa com cebola',
+        price: '50.00',
+        photo: pizza,
+    },
+    {
+        id: '2',
+        name: 'petiscos',
+        description: 'calabresa, frango, carne, azeitona',
+        price: '35.00',
+        photo: petisco,
+    },
+    {
+        id: '3',
+        name: 'Combo long neck 6un',
+        description: 'skol, brahma ou antarctica',
+        price: '72.00',
+        photo: longneck,
+    },
+    {
+        id: '4',
+        name: 'Combo long neck 6un',
+        description: 'skol, skol ou antarctica',
+        price: '72.00',
+        photo: longneck,
+    },
+    {
+        id: '5',
+        name: 'Combo long neck 6un',
+        description: 'skol, antarctica ou antarctica',
+        price: '72.00',
+        photo: longneck,
+    },
+];
 
 const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');

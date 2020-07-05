@@ -16,12 +16,9 @@ export const ItemInfo = styled.View`
     padding-right: 5px;
 `;
 
-export const Photo = styled.View`
+export const Photo = styled.Image`
     height: 70px;
     width: 100px;
-    border: 1px solid #1c1c1c;
-    align-items: center;
-    justify-content: center;
 `;
 
 export const RadioButtonView = styled.View`

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {View} from 'react-native';
+import {TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {setCurrentPlace} from '../../../store/modules/CurrentPlace/actions';
@@ -27,6 +27,11 @@ import {
     Button,
     NumberOfTables,
     PlusLessButton,
+    ConfirmationData,
+    ConfirmationView,
+    ReservationButtons,
+    ReservationButton,
+    ReservationMessage,
 } from './styles';
 
 const items = [
@@ -69,18 +74,23 @@ const items = [
 
 const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
+    const [date, setDate] = useState('');
+    const [time, setTime] = useState('');
     const [numberOfTables, setNumberOfTables] = useState(1);
-    const [menu, setMenu] = useState([]);
+    const [isBooked, setIsBooked] = useState(false);
+    const [btnColor, setBtnColor] = useState('#e25822');
+    // const [menu, setMenu] = useState([]);
     const dispatch = useDispatch();
     const {place} = route.params;
 
-    useEffect(() => {
-        setMenu(mockedMenus.getMenus());
-    }, [place.id]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // useEffect(() => {
+    //     setMenu(mockedMenus.getMenus());
+    // });
 
     function handleGoToOrderMenu() {
         dispatch(setCurrentPlace(place));
-        dispatch(setCurrentMenu(menu));
+        dispatch(setCurrentMenu(items));
         navigation.navigate('Comanda');
     }
 
@@ -130,7 +140,7 @@ const Home = ({route, navigation}) => {
                     </Row>
                     {tab === 'menu' && (
                         /*menu.length > 0 &&*/ <>
-                            <MenuItemList items={menu} />
+                            <MenuItemList items={items} />
                             <Button
                                 padding="8px 15px"
                                 onPress={handleGoToOrderMenu}>
@@ -138,19 +148,31 @@ const Home = ({route, navigation}) => {
                             </Button>
                         </>
                     )}
-                    {tab === 'reservation' && (
+                    {tab === 'reservation' && !isBooked && (
                         <>
                             <ReservationData>
                                 <Text color="#808080" weight="bold">
                                     Data
                                 </Text>
-                                <Text>00/00</Text>
+                                <TextInput
+                                    placeholder="00/00"
+                                    placeholderTextColor="#000"
+                                    maxLength={5}
+                                    value={date}
+                                    onChangeText={setDate}
+                                />
                             </ReservationData>
                             <ReservationData>
                                 <Text color="#808080" weight="bold">
                                     Horário
                                 </Text>
-                                <Text>00:00</Text>
+                                <TextInput
+                                    placeholder="00:00"
+                                    placeholderTextColor="#000"
+                                    maxLength={5}
+                                    value={time}
+                                    onChangeText={setTime}
+                                />
                             </ReservationData>
                             <ReservationData>
                                 <Text color="#808080" weight="bold">
@@ -166,11 +188,69 @@ const Home = ({route, navigation}) => {
                                     </PlusLessButton>
                                 </NumberOfTables>
                             </ReservationData>
-                            <Button>
+                            <Button onPress={() => setIsBooked(true)}>
                                 <Text color="#fff" weight="bold">
                                     Reservar
                                 </Text>
                             </Button>
+                        </>
+                    )}
+                    {tab === 'reservation' && isBooked && (
+                        <>
+                            <Text color="#808080" size="20px" weight="bold">
+                                Reserva 637827
+                            </Text>
+                            <ConfirmationView>
+                                <ConfirmationData>
+                                    <Text color="#808080" weight="bold">
+                                        Data
+                                    </Text>
+                                    <Text color="#808080" weight="bold">
+                                        {date}/2020
+                                    </Text>
+                                </ConfirmationData>
+                                <ConfirmationData>
+                                    <Text color="#808080" weight="bold">
+                                        Horário
+                                    </Text>
+                                    <Text color="#808080" weight="bold">
+                                        {time}
+                                    </Text>
+                                </ConfirmationData>
+                                <ConfirmationData>
+                                    <Text color="#808080" weight="bold">
+                                        Quantidade de mesas
+                                    </Text>
+                                    <Text color="#808080" weight="bold">
+                                        {numberOfTables}
+                                    </Text>
+                                </ConfirmationData>
+                            </ConfirmationView>
+                            <Text color="#808080">
+                                Nome: Rogério dos Santos
+                            </Text>
+                            <ReservationButtons>
+                                <ReservationButton
+                                    onPress={() => setBtnColor('#808080')}
+                                    background={btnColor}
+                                    width="45%">
+                                    <Text color="#fff" weight="bold">
+                                        Check In
+                                    </Text>
+                                </ReservationButton>
+                                <ReservationButton
+                                    onPress={() => setIsBooked(false)}
+                                    background="#fff"
+                                    width="45%">
+                                    <Text color="#e25822" weight="bold">
+                                        Cancelar
+                                    </Text>
+                                </ReservationButton>
+                            </ReservationButtons>
+                            <ReservationMessage>
+                                Atenção: Ao chegar ao local apresente o número
+                                da reservaao garçon e faça o check in
+                            </ReservationMessage>
                         </>
                     )}
                 </Body>

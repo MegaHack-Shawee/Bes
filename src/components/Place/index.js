@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import Text from '../Text';
 import {PlaceView, PlaceInfo, PlaceLogo} from './styles';
 import {useFavorites} from '../../hooks/useFavorites';
+import placeLogo from '../../assets/images/place_logo.png';
 
 const Place = ({place}) => {
     const {addToFavorites, favoritePlaces} = useFavorites();
@@ -18,7 +19,7 @@ const Place = ({place}) => {
 
     return (
         <PlaceView>
-            <PlaceLogo />
+            <PlaceLogo source={placeLogo} />
             <PlaceInfo>
                 <Text
                     size="18px"

@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Bes !" title="#Bes !" src="src/assets/icons/logo/logoLaranja.png" width="200px" />
+    <img alt="Bes !" title="#Bes !" src="https://user-images.githubusercontent.com/44583521/86523453-11445a80-be43-11ea-9a21-0e361d1b2a56.png" width="180px" />
 </h1>
 
 <h4 align="center">
@@ -9,7 +9,6 @@
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout-e-funcionalidades">Layout e Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-qr-codes-para-teste">QR Codes para teste</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-tecnologias">Tecnologias</a>
 </p>
 
@@ -66,6 +65,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Redux Persist](https://www.npmjs.com/package/redux-persist)
 - [Styled Components](https://styled-components.com/)
 - [React Native Maps](https://www.npmjs.com/package/react-native-maps)
+- [ESLint](https://eslint.org/)
 
 ## 🏃‍♂️ Instalando o projeto
 

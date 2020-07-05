@@ -6,7 +6,7 @@ import {PlaceView, PlaceInfo, PlaceLogo} from './styles';
 import {useFavorites} from '../../hooks/useFavorites';
 import placeLogo from '../../assets/images/place_logo.png';
 
-const Place = ({place}) => {
+const Place = ({place, onPress}) => {
     const {addToFavorites, favoritePlaces} = useFavorites();
     const [isFavorited, setIsFavorited] = useState(false);
 
@@ -18,7 +18,7 @@ const Place = ({place}) => {
     }, [favoritePlaces, isFavorited, place.id, setIsFavorited]);
 
     return (
-        <PlaceView>
+        <PlaceView onPress={onPress}>
             <PlaceLogo source={placeLogo} />
             <PlaceInfo>
                 <Text

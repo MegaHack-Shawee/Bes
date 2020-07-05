@@ -74,6 +74,7 @@ const Home = ({route, navigation}) => {
     const [menu, setMenu] = useState([]);
     const dispatch = useDispatch();
     const {place} = route.params;
+    console.log(place);
 
     // useEffect(() => {
     //     setMenu(mockedMenus.getMenuById(place.id));

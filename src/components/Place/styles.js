@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const PlaceView = styled.View`
+export const PlaceView = styled.TouchableOpacity`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;

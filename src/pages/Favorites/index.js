@@ -10,7 +10,7 @@ import mockedPlaces from '../../database/mockedPlaces';
 import {useFavorites} from '../../hooks/useFavorites';
 import {EmptyFavoriteContainer, EmptyFavoriteContainerText} from './styles';
 
-const Favorites = () => {
+const Favorites = ({navigation}) => {
     const {favoritePlaces} = useFavorites();
     const [favorites, setFavorites] = useState([]);
 
@@ -29,7 +29,14 @@ const Favorites = () => {
                     <FlatList
                         data={favorites}
                         keyExtractor={item => item.id}
-                        renderItem={({item}) => <Place place={item} />}
+                        renderItem={({item: place}) => (
+                            <Place
+                                place={place}
+                                onPress={() =>
+                                    navigation.navigate('HomeScreen', {place})
+                                }
+                            />
+                        )}
                     />
                 ) : (
                     <EmptyFavoriteContainer>

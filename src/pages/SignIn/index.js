@@ -38,9 +38,9 @@ const SignIn = ({navigation}) => {
         );
     }, [email, emailError, password, passwordError]);
 
-    function handleSignIn() {
+    const handleSignIn = useCallback(() => {
         navigation.replace('TabsScreen');
-    }
+    }, [navigation]);
 
     return (
         <Container source={splash}>

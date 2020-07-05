@@ -1,5 +1,4 @@
 import React from 'react';
-import {View} from 'react-native';
 
 import Text from '../Text';
 import {OrderList, ItemBody, Row, ItemInfo, Photo} from './styles';

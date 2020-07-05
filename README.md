@@ -50,11 +50,11 @@ Vídeo de apresentação do projeto:
 
 ## 🔖 Layout e Funcionalidades
 
-<p align="center">
-    <img src="https://user-images.githubusercontent.com/44583521/81003652-913d4c80-8e21-11ea-9b31-bc702166b3ea.gif">
-</p>
-
-![Vitrine Americanas](https://user-images.githubusercontent.com/44583521/80930077-4f5fc800-8d87-11ea-9429-7769c4c60aa2.png)
+<h1 align="center">
+    <img alt="Bes !" title="#Bes !" src="https://user-images.githubusercontent.com/44583521/86523671-d7c11e80-be45-11ea-92af-83f563ba4beb.png" width="240px" />
+    <img alt="Bes !" title="#Bes !" src="https://user-images.githubusercontent.com/44583521/86524144-36d66180-be4d-11ea-82f3-70e73cf842c9.png" width="240px" />
+    <img alt="Bes !" title="#Bes !" src="https://user-images.githubusercontent.com/44583521/86524148-4d7cb880-be4d-11ea-94c1-3ff2dba2a2b5.png" width="240px" />
+</h1>
 
 ## 🚀 Tecnologias
 

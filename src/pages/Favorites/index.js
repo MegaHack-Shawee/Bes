@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {FlatList} from 'react-native-gesture-handler';
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/Fontisto';
 
 import Header from '../../components/Header';
 import Place from '../../components/Place';
@@ -40,7 +40,7 @@ const Favorites = ({navigation}) => {
                     />
                 ) : (
                     <EmptyFavoriteContainer>
-                        <Icon name="staro" color="#dfe1e5" size={135} />
+                        <Icon name="heart-alt" color="#dfe1e5" size={135} />
                         <EmptyFavoriteContainerText>
                             Você ainda não adicionou nenhum favorito
                         </EmptyFavoriteContainerText>

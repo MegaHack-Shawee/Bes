@@ -3,15 +3,7 @@ import {Image} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
-import places_grey_icon from '../assets/icons/places_grey_icon.png';
-import places_red_icon from '../assets/icons/places_red_icon.png';
-import cashbes_grey_icon from '../assets/icons/cashbes_grey_icon.png';
-import cashbes_red_icon from '../assets/icons/cashbes_red_icon.png';
-import favorite_grey_icon from '../assets/icons/favorite_grey_icon.png';
-import favorite_red_icon from '../assets/icons/favorite_red_icon.png';
-import check_grey_icon from '../assets/icons/check_grey_icon.png';
-import check_red_icon from '../assets/icons/check_red_icon.png';
+import Icon from 'react-native-vector-icons/Fontisto';
 
 import SignUp from '../pages/SignUp';
 import SignIn from '../pages/SignIn';
@@ -65,17 +57,28 @@ function TabScreens() {
                 tabBarIcon: ({focused, color, size}) => {
                     let icon;
 
-                    if (route.name === 'Estabelecimentos') {
-                        icon = focused ? places_red_icon : places_grey_icon;
-                    } else if (route.name === 'CashBes') {
-                        icon = focused ? cashbes_red_icon : cashbes_grey_icon;
-                    } else if (route.name === 'Favoritos') {
-                        icon = focused ? favorite_red_icon : favorite_grey_icon;
-                    } else if (route.name === 'Comanda') {
-                        icon = focused ? check_red_icon : check_grey_icon;
+                    switch (route.name) {
+                        case 'Estabelecimentos':
+                            icon = 'shopping-store';
+                            break;
+                        case 'CashBes':
+                            icon = 'dollar';
+                            break;
+                        case 'Favorites':
+                            icon = 'heart-alt';
+                            break;
+                        case 'Comanda':
+                            icon = 'nav-icon-a';
+                            break;
                     }
 
-                    return <Image source={icon} />;
+                    return (
+                        <Icon
+                            name={icon}
+                            size={25}
+                            color={focused ? '#ff5300' : '#dfe1e5'}
+                        />
+                    );
                 },
             })}
             tabBarOptions={{

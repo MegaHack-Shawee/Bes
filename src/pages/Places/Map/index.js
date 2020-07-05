@@ -18,6 +18,7 @@ import {
     PlaceInfo,
     PlaceIcon,
 } from './styles';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const Map = ({navigation}) => {
     const [name, setName] = useState('');

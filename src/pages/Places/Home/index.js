@@ -24,6 +24,7 @@ import {
     NumberOfTables,
     PlusLessButton,
 } from './styles';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const items = [
     {

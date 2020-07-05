@@ -1,12 +1,21 @@
-import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import React, {useEffect, useState} from 'react';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 import Text from '../Text';
 import {PlaceView, PlaceInfo, PlaceLogo} from './styles';
 import {useFavorites} from '../../hooks/useFavorites';
 
 const Place = ({place}) => {
-    const {addToFavorites} = useFavorites();
+    const {addToFavorites, favoritePlaces} = useFavorites();
+    const [isFavorited, setIsFavorited] = useState(false);
+
+    useEffect(() => {
+        const ifIsFavorited = favoritePlaces.find(
+            item => String(item) === String(place.id),
+        );
+        ifIsFavorited ? setIsFavorited(true) : setIsFavorited(false);
+        console.log(isFavorited);
+    }, [favoritePlaces, isFavorited, place.id, setIsFavorited]);
 
     return (
         <PlaceView>
@@ -18,19 +27,20 @@ const Place = ({place}) => {
                     color="#ff5300"
                     numberOfLines={2}>
                     {place.name}
-                </Text>
-                <Text color="#808080" weight="bold">
-                    {place.street}, {place.number}
+
+                    <Text color="#808080" weight="bold">
+                        {place.street}, {place.number}
+                    </Text>
                 </Text>
                 <Text color="#808080" size="8px" weight="bold">
                     {place.distance}
                 </Text>
             </PlaceInfo>
             <Icon
-                name="star-border"
-                color="#808080"
+                name={isFavorited ? 'star' : 'staro'}
+                color="#ffcc00"
                 size={35}
-                onPress={() => addToFavorites(place)}
+                onPress={() => addToFavorites(place.id)}
             />
         </PlaceView>
     );

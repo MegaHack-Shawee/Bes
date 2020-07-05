@@ -41,7 +41,22 @@ export const ReservationData = styled.View`
     align-items: center;
     border-bottom-color: #ddd;
     border-bottom-width: 1px;
-    padding: 20px 0;
+    padding: 20px 0px;
+`;
+
+export const ConfirmationData = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px;
+`;
+
+export const ConfirmationView = styled.View`
+    border-top-color: #ddd;
+    border-top-width: 1px;
+    border-bottom-color: #ddd;
+    border-bottom-width: 1px;
+    padding: 15px 0;
 `;
 
 export const Button = styled.TouchableOpacity`
@@ -57,4 +72,24 @@ export const NumberOfTables = styled.View`
 export const PlusLessButton = styled.TouchableOpacity`
     padding: 0 10px;
     align-items: center;
+`;
+
+export const ReservationButtons = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+`;
+
+export const ReservationButton = styled.TouchableOpacity`
+    background: ${props => props.background};
+    width: ${props => props.width};
+    border: 1px solid #e25822;
+    align-items: center;
+    padding: 5px 0;
+`;
+
+export const ReservationMessage = styled.Text`
+    text-align: center;
+    color: #808080;
+    margin-top: 20px;
 `;

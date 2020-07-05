@@ -1,10 +1,17 @@
 import React, {useState, useEffect, useCallback} from 'react';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {Image, Modal} from 'react-native';
 import Toast from 'react-native-simple-toast';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import cardIcon from '../../../assets/icons/card_icon.png';
+import placeLogo from '../../../assets/images/place_logo.png';
+
+import {addCashBes} from '../../../store/modules/CashBes/actions';
+import {resetCurrentPlace} from '../../../store/modules/CurrentPlace/actions';
+import {resetCurrentMenu} from '../../../store/modules/CurrentMenu/actions';
+import {resetList} from '../../../store/modules/Order/actions';
 
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
@@ -40,7 +47,19 @@ import {
     PaymentButtons,
     PaymentButton,
     Title,
+    EmptyPlaceContainer,
+    EmptyPlaceContainerText,
 } from './styles';
+
+const today = () => {
+    var date = new Date(),
+        day = date.getDate().toString(),
+        formatedDay = day.length == 1 ? '0' + day : day,
+        month = (date.getMonth() + 1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        formatedMonth = month.length == 1 ? '0' + month : month,
+        year = date.getFullYear();
+    return formatedDay + '/' + formatedMonth + '/' + year;
+};
 
 const Order = ({navigation}) => {
     const [tab, setTab] = useState('menu');
@@ -49,6 +68,7 @@ const Order = ({navigation}) => {
     const [isTableSet, setIsTableSet] = useState(false);
     const [isCheckClosed, setIsCheckClosed] = useState(false);
     const [isPaid, setIsPaid] = useState(false);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
@@ -77,10 +97,25 @@ const Order = ({navigation}) => {
     const handlePayment = useCallback(() => {
         const cashBack = calculateTotal() * 0.02;
         Toast.show(`Você acaba de ganhar R$ ${cashBack.toFixed(2)} de cashbes`);
-        // Add new cashback to cashbes list
+        dispatch(
+            addCashBes({
+                id: String(Math.random(1000)),
+                title: place.name,
+                date: today(),
+                price: cashBack.toFixed(2),
+            }),
+        );
+        navigation.navigate('CashBes');
+        setTab('menu');
+        setTableNumber('');
+        setIsTableSet(false);
+        setIsCheckClosed(false);
         setIsPaid(true);
         setIsModalVisible(false);
-    }, [calculateTotal]);
+        dispatch(resetCurrentPlace());
+        dispatch(resetCurrentMenu());
+        dispatch(resetList());
+    }, [calculateTotal, dispatch, navigation, place.name]);
 
     function renderModal() {
         return (
@@ -101,7 +136,7 @@ const Order = ({navigation}) => {
                     </Text>
                     <CheckView>
                         <PlaceView>
-                            <PlaceLogo />
+                            <PlaceLogo source={placeLogo} />
                             <PlaceInfo>
                                 <Text
                                     size="18px"
@@ -170,6 +205,16 @@ const Order = ({navigation}) => {
         );
     }
 
+    if (place.length === 0) {
+        return (
+            <EmptyPlaceContainer>
+                <MCIcon name="emoticon-sad" color="#dfe1e5" size={135} />
+                <EmptyPlaceContainerText>
+                    Selecione um lugar na lista de estabelecimentos
+                </EmptyPlaceContainerText>
+            </EmptyPlaceContainer>
+        );
+    }
     return (
         <Container>
             <Header />

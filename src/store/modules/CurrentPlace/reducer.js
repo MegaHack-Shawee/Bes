@@ -3,6 +3,9 @@ export default function CurrentPlace(state = [], action) {
         case '@Place/SET_PLACE': {
             return action.place;
         }
+        case '@Place/RESET_PLACE': {
+            return [];
+        }
         default: {
             return state;
         }

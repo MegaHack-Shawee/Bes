@@ -100,7 +100,7 @@ const SignIn = ({navigation}) => {
                         disabled={isButtonDisabled}
                         callback={handleSignIn}
                     />
-                    <Touch onPress={() => navigation.navigate('SignUpScreen')}>
+                    <Touch onPress={() => navigation.replace('SignUpScreen')}>
                         <Text color="#fff">Cadastre-se</Text>
                     </Touch>
                 </Form>

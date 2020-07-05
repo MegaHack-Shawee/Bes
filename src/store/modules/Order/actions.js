@@ -11,3 +11,9 @@ export const removeItem = id => {
         id,
     };
 };
+
+export const resetList = id => {
+    return {
+        type: '@Order/RESET_LIST',
+    };
+};

@@ -4,3 +4,9 @@ export const setCurrentMenu = menu => {
         menu,
     };
 };
+
+export const resetCurrentMenu = () => {
+    return {
+        type: '@CurrentMenu/RESET_MENU',
+    };
+};

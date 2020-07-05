@@ -49,3 +49,14 @@ export const HistoryPrice = styled.Text`
     font-size: 16px;
     color: #666;
 `;
+
+export const EmptyCashbesContainer = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const EmptyCashbesContainerText = styled.Text`
+    color: #dfe1e5;
+    text-align: center;
+`;

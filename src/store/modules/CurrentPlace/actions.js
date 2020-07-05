@@ -4,3 +4,9 @@ export const setCurrentPlace = place => {
         place,
     };
 };
+
+export const resetCurrentPlace = () => {
+    return {
+        type: '@Place/RESET_PLACE',
+    };
+};

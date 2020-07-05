@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useCallback} from 'react';
+import MCIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Header from '../../components/Header';
 import Container from '../../components/Container';
@@ -14,28 +15,45 @@ import {
     HistoryDate,
     PriceContainer,
     HistoryPrice,
+    EmptyCashbesContainer,
+    EmptyCashbesContainerText,
 } from './styles';
-
-const mockedHistory = [
-    {id: 1, title: 'Fulanos bar', date: '04/04/2020', price: 'R$ 5,00'},
-    {id: 2, title: 'Fulanos bar', date: '04/04/2020', price: 'R$ 5,00'},
-    {id: 3, title: 'Fulanos bar', date: '04/04/2020', price: 'R$ 5,00'},
-    {id: 4, title: 'Fulanos bar', date: '04/04/2020', price: 'R$ 5,00'},
-];
+import {useSelector} from 'react-redux';
 
 const CashBes = () => {
+    const cashbes = useSelector(state => state.Cashbes);
+
+    const calculateTotal = useCallback(() => {
+        var total = 0;
+        cashbes.map(cb => {
+            total += parseFloat(cb.price);
+        });
+        return total;
+    }, [cashbes]);
+
+    if (cashbes.length === 0) {
+        return (
+            <EmptyCashbesContainer>
+                <MCIcon name="emoticon-sad" color="#dfe1e5" size={135} />
+                <EmptyCashbesContainerText>
+                    Nenhum histórico de cashbes
+                </EmptyCashbesContainerText>
+            </EmptyCashbesContainer>
+        );
+    }
+
     return (
         <Container>
             <Header callback={null} />
             <CashbackContainer>
-                <CashBackValue>R$ 12,00</CashBackValue>
+                <CashBackValue>R$ {calculateTotal().toFixed(2)}</CashBackValue>
                 <CashbackDescription>
                     Seu saldo atual em Cash Bes
                 </CashbackDescription>
             </CashbackContainer>
             <Modal>
                 <CashbackHistory
-                    data={mockedHistory}
+                    data={cashbes}
                     keyExtractor={item => String(item.id)}
                     renderItem={({item}) => (
                         <CashbackHistoryItem>
@@ -46,7 +64,7 @@ const CashBes = () => {
                                 </HistoryDate>
                             </DetailsContainer>
                             <PriceContainer>
-                                <HistoryPrice>{item.price}</HistoryPrice>
+                                <HistoryPrice>R$ {item.price}</HistoryPrice>
                             </PriceContainer>
                         </CashbackHistoryItem>
                     )}

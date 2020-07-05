@@ -3,6 +3,9 @@ export default function CurrentMenu(state = [], action) {
         case '@CurrentMenu/SET_MENU': {
             return action.menu;
         }
+        case '@CurrentMenu/RESET_MENU': {
+            return [];
+        }
         default: {
             return state;
         }

@@ -135,17 +135,15 @@ export const PlaceView = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
-    margin-top: 20px;
+    padding: 0 10px;
+    margin: 20px 0 10px 0;
 `;
 
 export const PlaceInfo = styled.View``;
 
-export const PlaceLogo = styled.View`
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    background: #808080;
+export const PlaceLogo = styled.Image`
+    width: 70px;
+    height: 70px;
 `;
 
 export const PaymentButtons = styled.View`
@@ -167,4 +165,15 @@ export const Title = styled.View`
     border-bottom-width: 2px;
     border-bottom-color: #ff5300;
     margin-top: 10px;
+`;
+
+export const EmptyPlaceContainer = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+`;
+
+export const EmptyPlaceContainerText = styled.Text`
+    color: #dfe1e5;
+    text-align: center;
 `;

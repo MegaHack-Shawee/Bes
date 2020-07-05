@@ -13,6 +13,9 @@ export default function Order(state = INITIAL_STATE, action) {
                 draft.splice(index, 1);
                 break;
             }
+            case '@Order/RESET_LIST': {
+                return [];
+            }
             default: {
                 return state;
             }

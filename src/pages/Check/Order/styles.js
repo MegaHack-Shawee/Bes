@@ -128,7 +128,7 @@ export const CheckView = styled.View`
     background: #fff;
     width: 350px;
     height: 450px;
-    padding: 30px;
+    padding: 10px 30px;
 `;
 
 export const PlaceView = styled.View`

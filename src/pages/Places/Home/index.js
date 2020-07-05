@@ -6,6 +6,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import {setCurrentPlace} from '../../../store/modules/CurrentPlace/actions';
 import {setCurrentMenu} from '../../../store/modules/CurrentMenu/actions';
 
+import petisco from '../../../assets/images/petisco.jpg';
+import pizza from '../../../assets/images/pizza.jpg';
+import longneck from '../../../assets/images/longneck.jpg';
+
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
@@ -31,30 +35,35 @@ const items = [
         name: 'pizza',
         description: 'calabresa com cebola',
         price: '50.00',
+        photo: pizza,
     },
     {
         id: '2',
         name: 'petiscos',
         description: 'calabresa, frango, carne, azeitona',
         price: '35.00',
+        photo: petisco,
     },
     {
         id: '3',
         name: 'Combo long neck 6un',
         description: 'skol, brahma ou antarctica',
         price: '72.00',
+        photo: longneck,
     },
     {
         id: '4',
         name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
+        description: 'skol, skol ou antarctica',
         price: '72.00',
+        photo: longneck,
     },
     {
         id: '5',
         name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
+        description: 'skol, antarctica ou antarctica',
         price: '72.00',
+        photo: longneck,
     },
 ];
 

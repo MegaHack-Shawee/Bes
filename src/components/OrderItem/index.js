@@ -1,5 +1,4 @@
-import React, {useState} from 'react';
-import {View} from 'react-native';
+import React, {useState, useCallback} from 'react';
 import {useDispatch} from 'react-redux';
 
 import {addItem} from '../../store/modules/Order/actions';
@@ -24,21 +23,20 @@ const OrderItem = ({item}) => {
     const [ammount, setAmmount] = useState(1);
     const dispatch = useDispatch();
 
-    function handleAddItem() {
+    const handleAddItem = useCallback(() => {
         if (ammount <= 9) {
             setAmmount(ammount + 1);
         }
-    }
-    function handleRemoveItem() {
+    }, [ammount]);
+    const handleRemoveItem = useCallback(() => {
         if (ammount > 1) {
             setAmmount(ammount - 1);
         }
-    }
-
-    function handleOrder() {
+    }, [ammount]);
+    const handleOrder = useCallback(() => {
         dispatch(addItem({item, ammount}));
         setChecked(false);
-    }
+    }, [ammount, dispatch, item]);
 
     return (
         <ItemBody>

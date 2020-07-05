@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import React, {useState, useEffect, useCallback} from 'react';
+import {useSelector} from 'react-redux';
 import {Image, Modal} from 'react-native';
 import Toast from 'react-native-simple-toast';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import cardIcon from '../../../assets/icons/card_icon.png';
-
-import {addItem} from '../../../store/modules/Order/actions';
 
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
@@ -62,30 +60,27 @@ const Order = ({navigation}) => {
 
     const place = useSelector(state => state.CurrentPlace);
     const menu = useSelector(state => state.CurrentMenu);
-
-    const dispatch = useDispatch();
-
     const order = useSelector(state => state.Order);
 
-    function handleOrder() {
+    const handleOrder = useCallback(() => {
         setTab('order');
-    }
+    }, []);
 
-    function calculateTotal() {
+    const calculateTotal = useCallback(() => {
         var total = 0;
         order.map(or => {
             total += parseFloat(or.item.price) * or.ammount;
         });
         return total;
-    }
+    }, [order]);
 
-    function handlePayment() {
+    const handlePayment = useCallback(() => {
         const cashBack = calculateTotal() * 0.02;
         Toast.show(`Você acaba de ganhar R$ ${cashBack.toFixed(2)} de cashbes`);
         // Add new cashback to cashbes list
         setIsPaid(true);
         setIsModalVisible(false);
-    }
+    }, [calculateTotal]);
 
     function renderModal() {
         return (

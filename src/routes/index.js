@@ -45,6 +45,7 @@ function favoritesSTack() {
     return (
         <Stack.Navigator initialRouteName="Favorites" headerMode="none">
             <Stack.Screen name="Favorites" component={Favorites} />
+            <Stack.Screen name="HomeScreen" component={Home} />
         </Stack.Navigator>
     );
 }

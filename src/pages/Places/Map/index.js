@@ -6,6 +6,7 @@ import map from '../../../assets/images/map.png';
 import Container from '../../../components/Container';
 import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
+import Place from '../../../components/Place';
 import Text from '../../../components/Text';
 import mockedPlaces from '../../../database/mockedPlaces';
 import {
@@ -14,10 +15,10 @@ import {
     Input,
     Touch,
     GPS,
-    Place,
     PlaceInfo,
     PlaceIcon,
 } from './styles';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const Map = ({navigation}) => {
     const [name, setName] = useState('');
@@ -43,20 +44,9 @@ const Map = ({navigation}) => {
         return places.map(place => (
             <Place
                 key={place.id}
-                onPress={() => navigation.navigate('HomeScreen', {place})}>
-                <PlaceInfo>
-                    <Text color="#808080" weight="bold">
-                        {place.name}
-                    </Text>
-                    <Text color="#808080">
-                        {place.street}, {place.number}
-                    </Text>
-                    <Text color="#808080" size="8px">
-                        {place.distance}
-                    </Text>
-                </PlaceInfo>
-                <PlaceIcon />
-            </Place>
+                onPress={() => navigation.navigate('HomeScreen', {place})}
+                place={place}
+            />
         ));
     }
 

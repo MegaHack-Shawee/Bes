@@ -33,6 +33,7 @@ import {
     ReservationButton,
     ReservationMessage,
 } from './styles';
+import {ScrollView} from 'react-native-gesture-handler';
 
 const items = [
     {
@@ -82,6 +83,7 @@ const Home = ({route, navigation}) => {
     // const [menu, setMenu] = useState([]);
     const dispatch = useDispatch();
     const {place} = route.params;
+    console.log(place);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     // useEffect(() => {

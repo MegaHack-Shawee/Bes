@@ -5,7 +5,6 @@ import React, {
     useContext,
     useEffect,
 } from 'react';
-import {AsyncStorage} from 'react-native';
 
 const FavoritePlacesProvider = createContext({});
 
@@ -13,51 +12,34 @@ const FavoritePlaces = ({children}) => {
     const [favoritePlaces, setFavoritePlaces] = useState([]);
 
     useEffect(() => {
-        async function loadStoragedData() {
-            const places = await AsyncStorage.getItem('@Ambev:places');
-
-            if (places) {
-                setFavoritePlaces(places);
-            }
-        }
-        loadStoragedData();
-    }, []);
-
-    useEffect(() => {
-        console.log(favoritePlaces);
+        favoritePlaces;
     }, [favoritePlaces]);
 
     const addToFavorites = useCallback(
-        async place => {
-            setFavoritePlaces([...favoritePlaces, place]);
-
-            await AsyncStorage.setItem(
-                '@Ambev:places',
-                JSON.stringify(favoritePlaces),
+        id => {
+            const ifAlreadyExist = favoritePlaces.find(
+                item => String(item) === String(id),
             );
+
+            if (ifAlreadyExist) {
+                removeToFavorites(id);
+                return;
+            }
+
+            setFavoritePlaces([...favoritePlaces, id]);
         },
-        [favoritePlaces],
+        [favoritePlaces, removeToFavorites],
     );
 
     const removeToFavorites = useCallback(
-        async id => {
+        id => {
             const newFavoritePlaces = favoritePlaces.filter(
-                item => item.id !== id,
+                item => String(item) !== String(id),
             );
             setFavoritePlaces(newFavoritePlaces);
-
-            await AsyncStorage.setItem(
-                '@Ambev:places',
-                JSON.stringify(newFavoritePlaces),
-            );
         },
         [favoritePlaces],
     );
-
-    const clearFavorites = useCallback(async () => {
-        await AsyncStorage.removeItem('@Ambev:places');
-        setFavoritePlaces([]);
-    }, []);
 
     return (
         <FavoritePlacesProvider.Provider
@@ -65,7 +47,6 @@ const FavoritePlaces = ({children}) => {
                 favoritePlaces,
                 addToFavorites,
                 removeToFavorites,
-                clearFavorites,
             }}>
             {children}
         </FavoritePlacesProvider.Provider>
@@ -73,9 +54,7 @@ const FavoritePlaces = ({children}) => {
 };
 
 const useFavorites = () => {
-    const context = useContext(FavoritePlacesProvider);
-
-    return context;
+    return useContext(FavoritePlacesProvider);
 };
 
 export {useFavorites, FavoritePlaces};

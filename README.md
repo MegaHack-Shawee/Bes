@@ -56,6 +56,39 @@ Vídeo de apresentação do projeto:
     <img alt="Bes !" title="#Bes !" src="https://user-images.githubusercontent.com/44583521/86524148-4d7cb880-be4d-11ea-94c1-3ff2dba2a2b5.png" width="240px" />
 </h1>
 
+## 🔖 Locais Cadastrados (Fake API/Database)
+        `
+        {
+            Nome: 'football bar',
+            Endereço: 'Av. Paulista',
+            CEP: '22970000',
+        },
+        {
+            Nome: 'Bar & lanchonete dos amigos',
+            Endereço: 'Av. Paulista',
+            CEP: '22970000',
+        },
+        {
+            Nome: 'Fulanos bar',
+            Endereço: 'Rua augusta',
+            CEP: '25075100',
+        },
+        {
+            Nome: 'Beltranos bar & lanchonete',
+            Endereço: 'Av. Nossa senhora de Copacabana',
+            CEP: '3782090',
+        },
+        {
+            Nome: 'Churrascaria do foguinho',
+            Endereço: 'Rua Barata Ribeiro',
+            CEP: '56750100',
+        },
+        {
+            Nome: 'Restaurante Kilomania',
+            Endereço: 'Rua Oscar clark',
+            CEP: '4577050',
+        }
+        `
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:

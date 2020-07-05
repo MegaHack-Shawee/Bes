@@ -38,15 +38,9 @@ Agradecimento a todos os colaboradores do Bes!
 
 Uma aplicação desenvolvida durante a 3º edição do MegaHack da Shawee visando automatizar os processos de venda da Ambev. 
 
-- [Download do APK](https://drive.google.com/open?id=14NaJy8krp6ZSv6MnoJrPi2ySfs0SWguw)
+- [Download do APK](https://drive.google.com/file/d/1rhKRpCrp5XYkpJHoM4xPfspo1BbHT3Qf/view?usp=sharing)
 
 - [Download da Apresentação do Projeto](https://github.com/MegaHack-Shawee/VitrineAmericanas/files/4575853/Vitrine.Americanas-Time.34.pdf)
-
-- [Protótipo Navegável](https://xd.adobe.com/view/0b412d75-77d1-4469-4f0d-d15d613530f7-7d70/)
-
-Vídeo de apresentação do projeto:
-
-[![Video](https://img.youtube.com/vi/xXDZLFFsjAI/hqdefault.jpg)](https://www.youtube.com/watch?v=xXDZLFFsjAI)
 
 ## 🔖 Layout e Funcionalidades
 

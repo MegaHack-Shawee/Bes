@@ -8,10 +8,11 @@ import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Text from '../../components/Text';
-import {Container, LogoView, FormView, Logo, Touch} from './styles';
 
 import * as validation from '../../utils/validations';
 import {handleInputChange} from '../../utils/handlers';
+
+import {Container, LogoView, FormView, Logo, Touch} from './styles';
 
 const SignIn = ({navigation}) => {
     const [email, setEmail] = useState();

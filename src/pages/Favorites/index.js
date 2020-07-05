@@ -21,31 +21,33 @@ const Favorites = ({navigation}) => {
         setFavorites(places);
     }, [favoritePlaces]);
 
+    if (favorites.length === 0) {
+        return (
+            <EmptyFavoriteContainer>
+                <Icon name="heart-alt" color="#dfe1e5" size={135} />
+                <EmptyFavoriteContainerText>
+                    Você ainda não adicionou nenhum favorito
+                </EmptyFavoriteContainerText>
+            </EmptyFavoriteContainer>
+        );
+    }
+
     return (
         <Container>
             <Header callback={null} />
             <Modal>
-                {favorites.length ? (
-                    <FlatList
-                        data={favorites}
-                        keyExtractor={item => item.id}
-                        renderItem={({item: place}) => (
-                            <Place
-                                place={place}
-                                onPress={() =>
-                                    navigation.navigate('HomeScreen', {place})
-                                }
-                            />
-                        )}
-                    />
-                ) : (
-                    <EmptyFavoriteContainer>
-                        <Icon name="heart-alt" color="#dfe1e5" size={135} />
-                        <EmptyFavoriteContainerText>
-                            Você ainda não adicionou nenhum favorito
-                        </EmptyFavoriteContainerText>
-                    </EmptyFavoriteContainer>
-                )}
+                <FlatList
+                    data={favorites}
+                    keyExtractor={item => item.id}
+                    renderItem={({item: place}) => (
+                        <Place
+                            place={place}
+                            onPress={() =>
+                                navigation.navigate('HomeScreen', {place})
+                            }
+                        />
+                    )}
+                />
             </Modal>
         </Container>
     );

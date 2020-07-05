@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import {StatusBar} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 import splash from '../../assets/images/splash.png';
 import logo from '../../assets/icons/splash_icon.png';
@@ -7,8 +8,8 @@ import logo from '../../assets/icons/splash_icon.png';
 import Form from '../../components/Form';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+
 import {Container, LogoView, FormView, Logo} from './styles';
-import {ScrollView} from 'react-native-gesture-handler';
 
 const SignUp = ({navigation}) => {
     const [email, setEmail] = useState('');

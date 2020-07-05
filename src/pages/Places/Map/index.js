@@ -7,18 +7,8 @@ import Container from '../../../components/Container';
 import Header from '../../../components/Header';
 import Modal from '../../../components/Modal';
 import Place from '../../../components/Place';
-import Text from '../../../components/Text';
 import mockedPlaces from '../../../database/mockedPlaces';
-import {
-    Body,
-    InputView,
-    Input,
-    Touch,
-    GPS,
-    PlaceInfo,
-    PlaceIcon,
-} from './styles';
-import {ScrollView} from 'react-native-gesture-handler';
+import {Body, InputView, Input, Touch, GPS} from './styles';
 
 const Map = ({navigation}) => {
     const [name, setName] = useState('');
@@ -58,23 +48,23 @@ const Map = ({navigation}) => {
                     <InputView>
                         <Input
                             placeholder="Rua/CEP"
-                            placeholderTextColor="#ddd"
+                            placeholderTextColor="#dfe1e5"
                             value={streetOrZipcode}
                             onChangeText={setStreetOrZipcode}
                         />
                         <Touch onPress={filterByStreetOrZipcode}>
-                            <Icon name="search" color="#ddd" size={30} />
+                            <Icon name="search" color="#dfe1e5" size={30} />
                         </Touch>
                     </InputView>
                     <InputView>
                         <Input
                             placeholder="Nome do estabelecimento"
-                            placeholderTextColor="#ddd"
+                            placeholderTextColor="#dfe1e5"
                             value={name}
                             onChangeText={setName}
                         />
                         <Touch onPress={filterByName}>
-                            <Icon name="search" color="#ddd" size={30} />
+                            <Icon name="search" color="#dfe1e5" size={30} />
                         </Touch>
                     </InputView>
                     {found && renderPlaces()}

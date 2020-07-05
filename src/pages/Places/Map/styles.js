@@ -8,8 +8,9 @@ export const Input = styled.TextInput`
 export const InputView = styled.View`
     flex-direction: row;
     align-items: center;
-    border: 2px solid #ddd;
+    border: 2px solid #dfe1e5;
     margin-top: 20px;
+    border-radius: 20px;
 `;
 
 export const Touch = styled.TouchableOpacity`

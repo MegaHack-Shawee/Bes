@@ -12,7 +12,7 @@ const FavoritePlaces = ({children}) => {
     const [favoritePlaces, setFavoritePlaces] = useState([]);
 
     useEffect(() => {
-        console.log(favoritePlaces);
+        favoritePlaces;
     }, [favoritePlaces]);
 
     const addToFavorites = useCallback(

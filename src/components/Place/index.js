@@ -14,7 +14,6 @@ const Place = ({place}) => {
             item => String(item) === String(place.id),
         );
         ifIsFavorited ? setIsFavorited(true) : setIsFavorited(false);
-        console.log(isFavorited);
     }, [favoritePlaces, isFavorited, place.id, setIsFavorited]);
 
     return (
@@ -27,10 +26,9 @@ const Place = ({place}) => {
                     color="#ff5300"
                     numberOfLines={2}>
                     {place.name}
-
-                    <Text color="#808080" weight="bold">
-                        {place.street}, {place.number}
-                    </Text>
+                </Text>
+                <Text color="#808080" weight="bold">
+                    {place.street}, {place.number}
                 </Text>
                 <Text color="#808080" size="8px" weight="bold">
                     {place.distance}

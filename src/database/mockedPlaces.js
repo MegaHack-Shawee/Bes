@@ -63,6 +63,10 @@ class Places {
             place => place.name.toUpperCase() === filter.toUpperCase(),
         );
     }
+
+    getPlacesById(id) {
+        return this.places.find(item => String(item.id) === id);
+    }
 }
 
 export default new Places();

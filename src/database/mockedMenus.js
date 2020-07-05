@@ -215,6 +215,14 @@ class Menus {
     getMenuById(id) {
         return this.menus.filter(menu => String(menu.id) === String(id));
     }
+
+    getMenus() {
+        var menussList = [];
+        this.menus.map(menu => {
+            menussList.push(menu.items);
+        });
+        return menussList;
+    }
 }
 
 export default new Menus();

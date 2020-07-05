@@ -25,38 +25,38 @@ import {
     PlusLessButton,
 } from './styles';
 
-const items = [
-    {
-        id: '1',
-        name: 'pizza',
-        description: 'calabresa com cebola',
-        price: '50.00',
-    },
-    {
-        id: '2',
-        name: 'petiscos',
-        description: 'calabresa, frango, carne, azeitona',
-        price: '35.00',
-    },
-    {
-        id: '3',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72.00',
-    },
-    {
-        id: '4',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72.00',
-    },
-    {
-        id: '5',
-        name: 'Combo long neck 6un',
-        description: 'skol, brahma ou antarctica',
-        price: '72.00',
-    },
-];
+// const items = [
+//     {
+//         id: '1',
+//         name: 'pizza',
+//         description: 'calabresa com cebola',
+//         price: '50.00',
+//     },
+//     {
+//         id: '2',
+//         name: 'petiscos',
+//         description: 'calabresa, frango, carne, azeitona',
+//         price: '35.00',
+//     },
+//     {
+//         id: '3',
+//         name: 'Combo long neck 6un',
+//         description: 'skol, brahma ou antarctica',
+//         price: '72.00',
+//     },
+//     {
+//         id: '4',
+//         name: 'Combo long neck 6un',
+//         description: 'skol, brahma ou antarctica',
+//         price: '72.00',
+//     },
+//     {
+//         id: '5',
+//         name: 'Combo long neck 6un',
+//         description: 'skol, brahma ou antarctica',
+//         price: '72.00',
+//     },
+// ];
 
 const Home = ({route, navigation}) => {
     const [tab, setTab] = useState('menu');
@@ -65,13 +65,13 @@ const Home = ({route, navigation}) => {
     const dispatch = useDispatch();
     const {place} = route.params;
 
-    // useEffect(() => {
-    //     setMenu(mockedMenus.getMenuById(place.id));
-    // }, [place.id]);
+    useEffect(() => {
+        setMenu(mockedMenus.getMenus());
+    }, [place.id]);
 
     function handleGoToOrderMenu() {
         dispatch(setCurrentPlace(place));
-        dispatch(setCurrentMenu(items));
+        dispatch(setCurrentMenu(menu));
         navigation.navigate('Comanda');
     }
 
@@ -121,7 +121,7 @@ const Home = ({route, navigation}) => {
                     </Row>
                     {tab === 'menu' && (
                         /*menu.length > 0 &&*/ <>
-                            <MenuItemList items={items} />
+                            <MenuItemList items={menu} />
                             <Button
                                 padding="8px 15px"
                                 onPress={handleGoToOrderMenu}>

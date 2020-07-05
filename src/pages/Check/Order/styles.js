@@ -139,7 +139,9 @@ export const PlaceView = styled.View`
     margin: 20px 0 10px 0;
 `;
 
-export const PlaceInfo = styled.View``;
+export const PlaceInfo = styled.View`
+    width: 65%;
+`;
 
 export const PlaceLogo = styled.Image`
     width: 70px;

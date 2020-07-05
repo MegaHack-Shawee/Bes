@@ -58,7 +58,9 @@ const CashBes = () => {
                     renderItem={({item}) => (
                         <CashbackHistoryItem>
                             <DetailsContainer>
-                                <HistoryTitle>{item.title}</HistoryTitle>
+                                <HistoryTitle numberOfLines={1}>
+                                    {item.title}
+                                </HistoryTitle>
                                 <HistoryDate>
                                     DATA DA COMPRA: {item.date}
                                 </HistoryDate>

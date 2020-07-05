@@ -34,7 +34,14 @@ export const CashbackHistoryItem = styled.View`
     margin-bottom: 10px;
     padding: 10px;
 `;
-export const DetailsContainer = styled.View``;
+export const DetailsContainer = styled.View`
+    width: 65%;
+`;
+
+export const PriceContainer = styled.View`
+    width: 30%;
+`;
+
 export const HistoryTitle = styled.Text`
     font-size: 19px;
     color: #666;
@@ -43,7 +50,6 @@ export const HistoryDate = styled.Text`
     font-size: 10px;
     color: #666;
 `;
-export const PriceContainer = styled.View``;
 
 export const HistoryPrice = styled.Text`
     font-size: 16px;

@@ -44,18 +44,18 @@ const items = [
         photo: pizza,
     },
     {
-        id: '2',
-        name: 'petiscos',
-        description: 'calabresa, frango, carne, azeitona',
-        price: '35.00',
-        photo: petisco,
-    },
-    {
         id: '3',
         name: 'Combo long neck 6un',
         description: 'skol, brahma ou antarctica',
         price: '72.00',
         photo: longneck,
+    },
+    {
+        id: '2',
+        name: 'petiscos',
+        description: 'calabresa, frango, carne, azeitona',
+        price: '35.00',
+        photo: petisco,
     },
     {
         id: '4',

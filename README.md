@@ -36,11 +36,9 @@ Agradecimento a todos os colaboradores do Bes!
 
 ## 💻 Projeto
 
-Uma aplicação desenvolvida durante a 3º edição do MegaHack da Shawee visando automatizar os processos de venda da Ambev. 
+Somos uma plataforma que permite reservas online, descontos por meio de cashback e feedbacks dos estabelecimentos que você frequenta ou deseja frequentar. Porém, proporcionamos uma experiência completa com cardápios online, pagamento e o melhor de tudo, sua comanda online, para não ter surpresas na hora do pagamento. E claro, oferecer descontos aos estabelecimentos que mantiverem sua avaliação em alta e poder avaliar seus clientes, afinal, confiança e uma via de mão dupla.
 
-- [Download do APK](https://drive.google.com/file/d/1rhKRpCrp5XYkpJHoM4xPfspo1BbHT3Qf/view?usp=sharing)
-
-- [Download da Apresentação do Projeto](https://github.com/MegaHack-Shawee/VitrineAmericanas/files/4575853/Vitrine.Americanas-Time.34.pdf)
+- [Link do Pitch](https://www.youtube.com/watch?v=kud4ul0VZVU&feature=youtu.be)
 
 ## 🔖 Layout e Funcionalidades
 

@@ -38,7 +38,7 @@ Agradecimento a todos os colaboradores do Bes!
 
 Somos uma plataforma que permite reservas online, descontos por meio de cashback e feedbacks dos estabelecimentos que você frequenta ou deseja frequentar. Porém, proporcionamos uma experiência completa com cardápios online, pagamento e o melhor de tudo, sua comanda online, para não ter surpresas na hora do pagamento. E claro, oferecer descontos aos estabelecimentos que mantiverem sua avaliação em alta e poder avaliar seus clientes, afinal, confiança e uma via de mão dupla.
 
-- [Link do Pitch](https://www.youtube.com/watch?v=kud4ul0VZVU&feature=youtu.be)
+- [Vídeo de apresentação do projeto](https://www.youtube.com/watch?v=czH3y8FwNBI&feature=youtu.be)
 
 ## 🔖 Layout e Funcionalidades
 
